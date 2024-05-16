@@ -4,7 +4,7 @@ from . import views
 from .views import page1_view, page2_view, page3_view, page4_view, page5_view,delete_file
 
 urlpatterns = [
-    path('base/',views.Base,name='base'),
+    path('',views.Base,name='base'),
     path('login/',views.Login,name='login'),
     path('signup/',views.Signup,name='signup'),
     path('signout/',views.SignOut,name='signout'),

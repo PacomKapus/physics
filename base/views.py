@@ -12,7 +12,7 @@ from django.urls import reverse
 from django.http import HttpResponseForbidden, HttpResponseNotAllowed
 
 
-@login_required
+@login_required(login_url='login')
 def Base(request):
     today_date = datetime.now().date()
     comments = Comment.objects.all()
