@@ -141,7 +141,7 @@ def toggle_like(request, comment_id):
     else:
         comment.likes.add(user)
 
-    base_url = reverse('/') + '#comments-section'
+    base_url = reverse('base') + '#comments-section'
     return redirect(base_url)
 
 def delete_file(request, file_id):

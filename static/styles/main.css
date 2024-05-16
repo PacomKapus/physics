@@ -598,3 +598,208 @@ input:hover {
     background-color: transparent;
     border: 15px solid #000000;
 }
+
+@media only screen and (max-width: 450px) {
+
+    input {
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    .glave_div {
+        display: none;
+    }
+
+    .glave_img {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        position: static;
+        margin: 0;
+        margin: auto;
+    }
+
+    .base_div {
+        display: block;
+    }
+
+    .base_div1 {
+        display: block;
+    }
+    
+    .base_p, .base_a , .base_a-img{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .base_p1 {
+        display: none;
+    }
+
+    .base_h1 {
+        padding: 0;
+        font-size: 70px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .base_div-h1 {
+        margin: 0;
+        margin-top: 70px;
+    }
+
+    .base_lectures {
+        font-size: 43px;
+        padding: 0;
+        margin-left:10px ;
+    }
+
+    .footer-content {
+        display: block;
+    }
+
+    .uform input {
+        width: 300px;
+    }
+
+    .upload-form h1 {
+        font-size: 30px;
+    }
+
+    .profile_div1 {
+        display: block;
+        margin: 0;
+    }
+
+    .profile_div2 {
+        margin: 0;
+    }
+
+    .profile_div {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .profile_image-div {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+}
+
+@media only screen and (min-width: 1500px) and  (max-width: 2500px) {
+    .base_a,.base_p, .p_com, .time, .button_com1 , .base_div-d, .bt, .footer, .profile_p, .profile_div2, .profile_a, .upload-form button, .login_p   {
+        font-size: 50px;
+    }
+
+    .login_button {
+        width: 250px;
+        height: 90px;
+        font-size: 40px;
+    }
+
+    .login_p1 {
+        font-size: 35px;
+    }
+
+    .login_h1 {
+        font-size: 100px;
+    }
+
+    input {
+        width: 1000px;
+        height: 100px;
+        font-size: 30px;
+    }
+
+    .login_div1 {
+        width: 1000px;
+    }
+
+    .a_main {
+        font-size: 80px;
+    }
+
+    .delete-button, .le-div {
+        font-size: 30px;
+    }
+
+    .p_com1 {
+        font-size: 40px;
+    }
+
+    .base_h1 {
+        font-size: 180px;
+    }
+
+    .base_p1 {
+        font-size: 60px;
+    }
+
+    .glave_div {
+        width:  560px;
+        height: 610px;
+        top: 540px;
+        left: -10px;
+        border: 30px solid #000000;
+    }
+
+    .glave_img {
+        width:  600px;
+        height: 640px;
+    }
+
+    .base-p-p {
+        font-size: 50px;
+    }
+
+    .base_lectures, .upload-form h1 {
+        font-size: 120px;
+    }
+
+    .base_div2 {
+        width: 500px;
+        height: 420px;
+    }
+
+    .base_div5 {
+        width: 500px;
+        height: 420px;
+    }
+
+    .base_img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .base_h2 {
+        font-size: 50px;
+    }
+
+    .profile_a {
+        margin-top: 20%;
+        width: 300px;
+        height: 100px;
+    }
+
+    .profile_h1 {
+        font-size: 100px;
+    }
+
+    .upload-form, .file-list {
+        max-width:1000px;
+    }
+
+    .uform input {
+        width: 950px;
+        height: 100px;
+        font-size: 30px;
+    }
+}

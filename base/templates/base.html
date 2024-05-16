@@ -6,15 +6,15 @@
   <header class="base_div" id="main">
     <p class="base_p">Physics Website</p>
     <div class="base_div1">
-        <a class="base_a" href="#main">Main</a>
-        <a class="base_a" href="#lectures-section">Lectures</a>
-        <a class="base_a" href="#lectures_com">Comments</a>
-        <a class="base_a" href="#footer">Footer</a>
+        <h1><a class="base_a" href="#main">Main</a></h1>
+        <h1><a class="base_a" href="#lectures-section">Lectures</a></h1>
+        <h1><a class="base_a" href="#lectures_com">Comments</a></h1>
+        <h1><a class="base_a" href="#footer">Footer</a></h1>
     </div>
     <div></div>
     <a href="{% url 'profile' %}" class="base_a-img">
       {% if request.user.is_authenticated %}
-      {{ request.user.username }}
+      <p class="base-p-p">{{ request.user.username }}</p>
       <div class="base_div4"><img class="base_img1" src="/static/images/free-icon-user-profile-10337389.png" alt="img"></div>
       {% endif %}
     </a>
