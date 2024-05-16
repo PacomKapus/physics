@@ -1,0 +1,143 @@
+{% extends "main.html" %}
+{% load humanize %}
+{% block content %}
+<div class="dav">
+  <div class="base_div-lico1">
+  <header class="base_div" id="main">
+    <p class="base_p">Physics Website</p>
+    <div class="base_div1">
+        <a class="base_a" href="#main">Main</a>
+        <a class="base_a" href="#lectures-section">Lectures</a>
+        <a class="base_a" href="#lectures_com">Comments</a>
+        <a class="base_a" href="#footer">Footer</a>
+    </div>
+    <div></div>
+    <a href="{% url 'profile' %}" class="base_a-img">
+      {% if request.user.is_authenticated %}
+      {{ request.user.username }}
+      <div class="base_div4"><img class="base_img1" src="/static/images/free-icon-user-profile-10337389.png" alt="img"></div>
+      {% endif %}
+    </a>
+  </header>
+  <div class="base_div-lico">
+    <div class="base_div-h1"><h1 class="base_h1">Physics<h1  class="base_h1">Website</h1></h1></div>
+    <p class="base_p1">{{ today_date|date:"d.m.Y" }}</p> 
+    <p></p>
+  </div>
+  <img class="glave_img" src="/static/images/WhatsApp Image 2024-05-15 at 21.34.43.jpeg" alt="img">
+  <div class="glave_div"></div>
+</div>
+<div class="base_div-lico1">
+    <h1 class="base_lectures" id="lectures-section">Лекции по физике:</h1>
+    <div class="base_div3">
+      <a href="{% url 'page1' %}" class="base_div2">
+        <div class="base_div5">
+          <img class="base_img" src="/static/images/free-icon-thermodynamics-6813678.png" alt="img" width="100px" height="100px">
+          <h1 class="base_h2">Термодинамика</h1>
+        </div>
+      </a>
+      <a href="{% url 'page2' %}" class="base_div2">
+        <div class="base_div5">
+          <img class="base_img" src="/static/images/free-icon-physics-2465709.png" alt="img" width="100px" height="100px">
+          <h1 class="base_h2">Механика</h1>
+        </div>
+      </a>
+      <a href="{% url 'page3' %}" class="base_div2">
+        <div class="base_div5">
+          <img class="base_img" src="/static/images/free-icon-electrodynamics-14166486.png" alt="img" width="100px" height="100px">
+          <h1 class="base_h2">Электродинамика</h1>
+        </div>
+      </a>
+      <a href="{% url 'page4' %}" class="base_div2">
+        <div class="base_div5">
+          <img class="base_img" src="/static/images/free-icon-longitudinal-waves-1533950.png" alt="img" width="100px" height="100px">
+          <h1 class="base_h2">Колебания и волны</h1>
+        </div>
+      </a>
+      <a href="{% url 'page5' %}" class="base_div2">
+        <div class="base_div5">
+          <img class="base_img" src="/static/images/free-icon-convex-6825284.png" alt="img" width="100px" height="100px">
+          <h1 class="base_h2">Оптика</h1>
+        </div>
+      </a>
+    </div>
+  </div>
+    <h1 id="lectures_com" class="base_lectures">Оставьте свой комментарий:</h1>
+
+    <form method="post" action="{% url 'base' %}">
+      {% csrf_token %}
+      <div class="div_com">
+        <input class="input_com" type="text" name="text" placeholder="Enter your comment here" required>
+        <button class="button_com" type="submit">Add</button>
+      </div>
+  </form>
+
+  <!-- Отображение комментариев -->
+  
+    <div id="comments-section" class="comments">
+        {% for comment in comments %}
+            <div class="div_com1"><div class="base_div4"><img class="base_img1" src="/static/images/free-icon-user-profile-10337389.png" alt="img"></div>
+            <p class="p_com">{{ comment.user.username }}</p>
+            <span class="time">{{ comment.created_at|timesince }} ago</span>
+            </div>
+            <p class="p_com1">{{ comment.text }}</p>
+            <div class="base_div-d">
+            <p>Likes: {{ comment.likes.count }}</p>
+            
+            <form action="{% url 'toggle_like' comment.id %}" method="post">
+              {% csrf_token %}
+              <button class="bt" type="submit">
+                {% if request.user in comment.likes.all %}
+                ❤️
+                {% else %}
+                🖤
+                {% endif %}
+              </button>
+            </form>
+              <form method="post" action="{% url 'delete_comment' comment.id %}">
+                {% csrf_token %}
+                <button class="button_com1" type="submit">Delete</button>
+              </form>
+            </div>
+        {% endfor %}
+    </div>
+
+    <footer class="footer" id="footer">
+      <div class="footer-content">
+          <div class="footer-section">
+              <h3>Контакты</h3>
+              <p>Email: info@physicswebsite.com<br>Телефон: +7 775 117 2640</p>
+          </div>
+          <div class="footer-section">
+            <h3>О нас</h3>
+            <p>Наш сайт посвящен изучению физики и ее приложений в современном мире. Мы предоставляем образовательные материалы, новости и многое другое.</p>
+        </div>
+          <div class="footer-section">
+            <h3>Социальные сети</h3>
+            <div>
+                <li><a href="#" class="li">Facebook</a></li>
+                <li><a href="#" class="li"> Twitter </a></li>
+                <li><a href="#" class="li">Instagram</a></li>
+            </div>
+        </div>
+      </div>
+  </footer>
+</div>
+<script>
+  window.onload = function() {
+      if(window.location.hash) {
+          document.querySelector(window.location.hash).scrollIntoView();
+      }
+  };
+
+  window.addEventListener('scroll', function() {
+    var header = document.querySelector('.base_div');
+    var top = window.scrollY;
+    if (top > 50) { // измените это значение на то, которое считаете нужным для начала прокрутки
+        header.classList.add('fixed');
+    } else {
+        header.classList.remove('fixed');
+    }
+});
+</script>
+{% endblock content %}

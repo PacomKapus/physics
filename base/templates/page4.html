@@ -1,0 +1,38 @@
+{% extends "main.html" %}
+{% block content %}
+{% if not request.user.is_authenticated %}
+    <script>
+        alert('Вы не зарегистрированы. Пожалуйста, войдите в систему.');
+        window.location.href = "{% url 'login' %}";
+    </script>
+{% endif %}
+<div class="le-div">
+    <div class="div_main">
+        <a class="a_main" href="{% url 'base' %}">+</a>
+    </div>
+<div class="upload-form">
+    <h1>Колебания и волны</h1>
+    <form class="uform" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+</div>
+<div class="file-list">
+    {% for file in files %}
+        <div>
+            <a class="hrefa" href="/static/images/{{ file.file }}" download>{{ file.file }}</a>
+            <form action="{% url 'delete_file4' file.id %}" method="post">
+                {% csrf_token %}
+                <button class="delete-button" type="submit">Удалить файл</button>
+            </form>
+        </div>
+    {% endfor %}
+</div>
+</div>
+<script>
+    function deleteFile(fileName) {
+        alert(`Delete ${fileName}`);
+    }
+</script>
+{% endblock content %}

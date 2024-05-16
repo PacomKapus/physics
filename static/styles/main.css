@@ -1,0 +1,600 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #FFFFFF;
+    min-height: 100vh; /* Минимальная высота в 100% высоты окна */
+    min-width: 100vw;
+    overflow-y: hidden
+}
+
+.dav {
+    height: 100vh; /* 100% высоты видимой области */
+    overflow-y: auto;
+}
+
+h1,p{
+    margin: 0;
+}
+
+header {
+    padding:30px;
+}
+
+.base_div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.base_div1 {
+    display: flex;
+    justify-content: center;
+}
+
+.base_div2 {
+    width: 270px;
+    height: 200px;
+    background-color: #81dede;
+    border-radius: 50px 50px 0 0;
+    margin: 30px;
+    transition: background-color 2s, box-shadow 2s;
+    text-decoration: #81dede;
+    bottom: 5px solid #222222
+}
+
+.base_div2:hover .base_div5{
+    transform: translate3d(20px,20px,0);
+}
+
+.base_div3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.base_div4 {
+    background-color: #FFFFFF;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.base_div5 {
+    transition: transform .2s linear;
+    position: relative;
+    background-color: #81dede;
+    width: 270px;
+    height: 200px;
+    background-color: #f4f5f6;
+    border-radius: 50px 50px 0 0;
+    border: 5px solid #222222;
+}
+
+.base_div-h1 {
+    margin-top: 150px;
+}
+
+.base_div-lico1 {
+    min-height: 100vh;
+    position: relative;
+}
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #81dede;
+    border-radius: 2px;
+}
+::selection {
+    background-color: #81dede;
+    color: #111111;
+}
+
+.base_p {
+    font-size: 30px;
+    background: linear-gradient(45deg,#f4f5f6  30%,  #81dede 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.base_a {
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 25px;
+    color: #FFFFFF;
+}
+
+.base_h1 {
+    font-family: sans-serif;
+    font-size: 110px;
+    background: linear-gradient(45deg,#f4f5f6  10%,  #81dede 30%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-left: 150px;
+}
+
+.base_h2 {
+    font-size: 30px;
+    color: #000000;
+    margin: auto;
+    margin-left: 10px;
+    word-wrap: break-word;
+    display: flex;
+    justify-content: center;
+    color: #81dede;
+}
+
+.base_img {
+    display: flex;
+    margin: auto;
+    padding: 20px 0 10px 0;
+    border-radius: 50px 50px 0 0;
+}
+
+.base_img1 {
+    width: 40px;
+    height: 40px;
+}
+
+.base_a-img {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: #81dede;
+    text-decoration: none;
+}
+
+.base_p1 {
+    background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet,#FFFFFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 60px;
+    transform: rotate(270deg);
+    margin-top: -200px;
+    margin-left:-50px ;
+    height: 60px;
+    width: 300px;
+}
+
+.base_lectures {
+    padding-left: 50px;
+    font-size: 70px;
+    background: linear-gradient(45deg,#f4f5f6  10%,  #81dede 30%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login_div {
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin-top: 80px    ;
+}
+
+.login_div1 {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.login_div-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.login_h1 {
+    color: #FFFFFF;
+    font-size: 48px;
+    font-family:DM Serif Display;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.login_p {
+    font-size: 24px;
+    color: #81dede;
+    font-family: Lexend Deca;
+    margin: 0;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.login_p1 {
+    color: #81dede;
+    font-size: 20px;
+}
+
+input {
+    width: 500px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #111111;
+    color: #A5A5A5;
+    font-size: 16px;
+    border: 1px solid #A5A5A5;
+    margin-bottom: 22px;
+    padding-left: 25px;
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+}
+
+input:hover {
+    background-color: #A5A5A5;
+    color: #000000;
+    border-color:#000000;
+}
+
+.login_input:hover::placeholder {
+    color: #000000;
+}
+
+.login_button {
+    color: #000000;
+    background-color: #81dede;
+    border-radius: 50px;
+    transition: 5s;
+    border: none;
+    width: 180px;
+    height: 60px;
+    font-size: 20px;
+    font-family: Lexend Deca;
+    font-weight: 900;
+    border: 1px solid transparent;
+    transition: border-color 5s,color 5s,background-color 5s;
+}
+
+.login_button:hover {
+    color: #81dede;
+    background-color: #000000;
+    border-color: #81dede ;
+}
+
+.login_a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.signup_div {
+    margin-right: 30px;
+}
+
+.errorlist {
+    top: 44px ;
+    left: 843px;
+    list-style-type: none;
+    position: absolute;
+    width: 364px;
+    height: 80px;
+    font-size: 16px;
+    background-color: #FF5E5B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.profile_a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: #FFFFFF;
+    color: #000000;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 550;
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    margin-top: 100px;
+    transition:all 3s ;
+    border: 1px solid #000000;
+}
+
+.profile_a:hover {
+    color: #FFFFFF;
+    background-color: #000000;
+    border-color:#FFFFFF ;
+}
+
+.profile_a1 {
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.profile_h1 {
+    font-size: 50px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile_div {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+.profile_div1 {
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.profile_div2 {
+    margin-left: 20px;
+}
+
+.profile_p {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.profile_img1 {
+
+}
+
+.profile_image-div {
+    width: 150px;
+    height: 150px;
+    background-color: #FFFFFF;
+    border-radius: 100px; 
+}
+
+.div_com {
+    display: flex;
+    justify-content: space-between;
+    padding:0 20px ;
+    padding-top: 25px;
+}
+
+.input_com {
+    background-color: #000000;
+    height: 80px;
+    width: 85%;
+}
+
+.button_com {
+    font-size:20px ;
+    font-weight: 600;
+    height: 80px;
+    width: 80px;
+    border-radius: 30px;
+    color: #A5A5A5;
+    background-color: #000000;
+}
+
+.button_com1 {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: none;
+}
+
+.div_com1 {
+    display: flex;
+    align-items: center;
+    margin-left: -10px;
+    margin-bottom: 10px;
+}
+
+.p_com {
+    margin-left: 15px;
+}
+
+.p_com1 {
+    color: #afafaf;
+}
+
+.comments {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.time {
+    margin-left: 10px;
+}
+
+.upload-form {
+    padding: 20px;
+    border-radius: 8px;
+    
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    max-width: 600px;
+    margin:  auto; 
+}
+
+.upload-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.upload-form h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    font-size: 50px;
+    background: linear-gradient(45deg,#3399ff 30%,  #81dede 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.uform input {
+    background-color: #3399ff;
+    color: white;
+    cursor: pointer;
+    width: 573px;
+    height: 70px;
+}
+
+.uform label {
+    display: none;
+}
+
+.upload-form button {
+    background-color: #3399ff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-form button:hover {
+    background-color: #0073e6; 
+}
+
+.file-list {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #b3d9ff; 
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    max-width: 600px;
+}
+
+.file-list div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #b3d9ff; 
+}
+
+.file-list div:last-child {
+    border-bottom: none; 
+}
+
+.file-list a {
+    text-decoration: none; 
+    color: #3399ff; 
+}
+
+.file-list a:hover {
+    text-decoration: underline; 
+}
+
+.delete-button {
+    background-color: #ff3333; 
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #cc0000; 
+}
+
+.le-div {
+    font-family: Arial, sans-serif;
+    background-color: #000000; 
+    color: #333; 
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; 
+    min-width: 100vw; 
+    padding-top: 30px;
+}
+
+.base_div-d {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.a_main{
+    transform: rotate(45deg);
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 75px;
+    transition: 1s;
+    width: 50px;
+    height: 50px;
+    padding-right: 35px;
+}
+
+.div_main{
+    overflow: hidden;
+    display: flex;
+    justify-content: end;
+}
+
+.footer {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    color: #cfe2f3;
+    border-top: 1px solid #afafaf;
+    border-bottom: 1px solid #afafaf;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.li {
+    text-decoration: none;
+}
+
+.hrefa {
+    width: 500px;
+    white-space: nowrap; /* Остановка переноса текста на новую строку */
+    overflow: hidden; /* Обрезание содержимого, которое выходит за границы элемента */
+    text-overflow: ellipsis;
+}
+
+.bt {
+    background-color: transparent;
+    box-shadow: none;
+    text-decoration: none;
+    border: none;
+    font-size: 20px;
+    align-items: center;
+    display: flex;
+}
+
+.profile-p {
+    color: #81dede;
+    margin-left: 5px;
+}
+
+.glave_img {
+    position: absolute;
+    z-index: 1;
+    width: 488px;
+    height: 440px;
+    margin-top: -17%;
+    margin-left:55% ;
+}
+
+.glave_div {
+    position: absolute;
+    z-index: 1;
+    width: 468px;
+    height: 420px;
+    margin-top: -17%;
+    margin-left:55% ;
+    background-color: transparent;
+    border: 15px solid #000000;
+}

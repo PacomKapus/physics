@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{% block content %}
+    <div class="login_div">
+        <div class="login_div1">
+            <div>
+                <h1 class="login_h1">Welcome</h1>
+                <p class="login_p">Register on the physics website</p>
+                <form method="POST" action="{% url 'signup' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                <div class="login_div2">
+                    <div class="login_div-button"><button type="submit" class="login_button">SUBMIT</button></div>
+                    <div><p class="login_p1">already have an account? <a class="login_a" href="{% url 'login' %}">log-in</a></p>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% block content %}
+  <h1 class="profile_h1">Your profile</h1>
+  {% if request.user.is_authenticated %}
+  <div class="profile_div1"><div class="profile_image-div"><img class="profile_img1" src="/static/images/free-icon-user-profile-10337389.png" width="150px" height="150" alt="img"></div>
+    <div class="profile_div2"><div class="profile_div">
+    <p>Your username: </p>
+    <p class="profile-p">{{ request.user.username }}</p>
+    </div>
+    <div class="profile_div">
+    <p>Your email: </p>
+    <p class="profile-p">{{ request.user.email }}</p>
+    </div>
+    <div class="profile_div">
+    <p>Superuser: </p>
+    <p class="profile-p">{{ request.user.is_superuser }}</p>
+    </div></div></div>
+    <a href="{% url 'signout' %}" class="profile_a">Sign Out</a>
+    <p class="profile_p">Go back to main page <a href="{% url 'base' %}" class="profile_a1"> Base</a></p>
+  {% endif %}
+{% endblock content %}

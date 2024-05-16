@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="login_div">
+        <div class="login_div1">
+            <div>
+                <h1 class="login_h1">Welcome</h1>
+                <p class="login_p">Log in to your account on the physics website</p>
+                <form method="POST" action="">
+                    {% if error != '' %}
+                        <div class="errorlist">
+                            {{ error }}
+                        </div>
+                    {% endif %}
+                    {% csrf_token %} 
+                    
+                    <input type="email" name="email" placeholder="Enter your email" required/>
+                    <input type="password" name="password" placeholder="Enter your password" required/>
+
+                    <div class="login_div2">
+                        <div class="login_div-button"><button type="submit" class="login_button">LOGIN</button></div>
+                        <div class="signup_div"><p class="login_p1">Don’t have an account? <a class="login_a" href="{% url 'signup' %}">Sign-up</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+</div>
+{% endblock content %}
