@@ -31,7 +31,7 @@ def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
     if request.user == comment.user:
         comment.delete()
-    return redirect('base')
+    return redirect('/')
 
 def Login(request):
     error = ""
@@ -43,7 +43,7 @@ def Login(request):
             user = User.objects.get(email=email)
             if check_password(password, user.password):
                 login(request, user)
-                return redirect('base')
+                return redirect('/')
             else:
                 messages.error(request, 'Email or Password is incorrect')
                 return redirect('login')
@@ -61,7 +61,7 @@ def Signup(request):
 
             user = form.save()
             login(request, user)
-            return redirect('/base')
+            return redirect('/')
     return render(request, 'signup.html', {'form': form})
 
 def SignOut(request):
@@ -141,7 +141,7 @@ def toggle_like(request, comment_id):
     else:
         comment.likes.add(user)
 
-    base_url = reverse('base') + '#comments-section'
+    base_url = reverse('/') + '#comments-section'
     return redirect(base_url)
 
 def delete_file(request, file_id):
